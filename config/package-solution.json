@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-create-elem-spec-client-side-solution",
+    "id": "8e17eb96-9202-4437-8e64-ebea767c6c8c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-create-elem-spec.sppkg"
+  }
+}
