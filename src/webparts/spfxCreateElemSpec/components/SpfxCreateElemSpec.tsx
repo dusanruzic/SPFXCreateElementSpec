@@ -1073,11 +1073,12 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
         var resu: Promise<string> = PageModelHelper.createCustomPage(SharePointService.newListItemId, this.state.optionSelected);
         resu.then(ss => {
           console.log(ss);
+          window.location.href = "https://jvspdev.sharepoint.com/sites/AtlasCorpoProject/SitePages/All-element-specs.aspx";
+
         });
         
       });
 
-      window.location.href = "https://jvspdev.sharepoint.com/sites/AtlasCorpoProject/SitePages/All-element-specs.aspx";
 
 
     }
