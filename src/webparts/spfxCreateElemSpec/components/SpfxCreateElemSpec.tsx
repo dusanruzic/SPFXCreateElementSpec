@@ -41,6 +41,8 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
     this.handleChange = this.handleChange.bind(this);
     this.promenaGlavnog = this.promenaGlavnog.bind(this);
 
+    this.space = this.space.bind(this);
+    this.newline = this.newline.bind(this);
     this.superscript = this.superscript.bind(this); 
     this.subscript = this.subscript.bind(this);
     this.superscriptSubscript = this.superscriptSubscript.bind(this);
@@ -136,6 +138,12 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
 
         <div style={{marginTop:'5px'}}>
         <div style={{width:'30%', float:'left'}}>
+        <button className={styles.accordion} onClick={evt =>this.chg(evt)}>Commands</button>
+          <div className={styles.panel}>
+            <button onClick={this.space}>Space</button>
+            <button onClick={this.newline}>Newline</button>
+          </div>  
+
           <button className={styles.accordion} onClick={evt =>this.chg(evt)}>Subscript & Superscript</button>
           <div className={styles.panel}>
             <button onClick={this.superscript}>a<sup>x</sup></button>
@@ -259,6 +267,34 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
       
       </div>
     );
+  }
+
+  public space() {
+    let val = '\\ ';
+      let form = this.state.formula + val;
+      let mathjax = '$$'+ form + '$$';
+  
+      this.setState({
+        value: val,
+        formula: form,
+        formulaMathjax: mathjax
+        
+      });
+  
+  }
+
+  public newline() {
+    let val = '\\\\';
+      let form = this.state.formula + val;
+      let mathjax = '$$'+ form + '$$';
+  
+      this.setState({
+        value: val,
+        formula: form,
+        formulaMathjax: mathjax
+        
+      });
+  
   }
 
   public superscript() {
@@ -1025,7 +1061,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
         console.log(result);
         SharePointService.newListItemId = result.ID;
 
-        alert(`Novokreirani item ID: ${result.ID}`);
+        //alert(`Novokreirani item ID: ${result.ID}`);
         let num = SharePointService.returnNumberOfFiles();
         
         for(let i =0 ; i< num; i++) {
@@ -1033,13 +1069,15 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
             console.log(res);
           })
         }
+
+        var resu: Promise<string> = PageModelHelper.createCustomPage(SharePointService.newListItemId, this.state.optionSelected);
+        resu.then(ss => {
+          console.log(ss);
+        });
         
       });
 
-      var resu: Promise<string> = PageModelHelper.createCustomPage(this.state.name, this.state.optionSelected);
-    resu.then(ss => {
-      console.log(ss);
-    });
+      window.location.href = "https://jvspdev.sharepoint.com/sites/AtlasCorpoProject/SitePages/All-element-specs.aspx";
 
 
     }

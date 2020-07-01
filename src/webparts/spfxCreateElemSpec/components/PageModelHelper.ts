@@ -27,9 +27,9 @@ export class PageModelHelper {
   }
   */
 
-  public static async createCustomPage(pagename: string, pageType: string): Promise<string> {
+  public static async createCustomPage(pagename: number, pageType: string): Promise<string> {
     
-    const page = await sp.web.addClientsidePage(pagename + ".aspx");
+    const page = await sp.web.addClientsidePage("elemspec" + pagename + ".aspx");
     console.log("pagetype" + pageType);
 
     const partDefs = await sp.web.getClientsideWebParts();
