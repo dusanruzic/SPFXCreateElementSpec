@@ -304,7 +304,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public superscript() {
-    console.log(this.state.formula);
+    //this.state.formula);
     let base = prompt("Please enter base number", "Base number");
     var exp = prompt("Please enter exponent number", "Exponent number");
     let val = '{' + base + '}^{' + exp + '}';
@@ -321,7 +321,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public subscript() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let base = prompt("Please enter base number", "Base number");
     var index = prompt("Please enter index number", "Index number");
 
@@ -339,7 +339,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public superscriptSubscript() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let base = prompt("Please enter base number", "Base number");
     var index = prompt("Please enter index number", "Index number");
     var exp = prompt("Please enter exponent number", "Exponent number");
@@ -358,7 +358,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public sum() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let base = prompt("Please enter starting value for i", "Start value");
     var exp = prompt("Please enter end value for i", "End value");
     var stat = prompt("Please enter statement within sum", "Statement within sum");
@@ -375,7 +375,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public doubleSum() {
-    console.log(this.state.formula);
+    //this.state.formula);
     let base1 = prompt("Please enter starting value for i", "Start value");
     var exp1 = prompt("Please enter end value for i", "End value");
     let base2 = prompt("Please enter starting value for j", "Start value");
@@ -394,7 +394,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public fraction() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let numerator = prompt("Please enter numerator", "Numerator");
     var denominator = prompt("Please enter denominator", "Denominator");
 
@@ -412,7 +412,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public definiteIntegral() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let lower = prompt("Please enter lower limit of the integral", "Lower limit");
     var upper = prompt("Please enter upper limit of the integral", "Upper limit");
     var func = prompt("Please enter value within the integral", "Value within the integral");
@@ -431,7 +431,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public contourIntegral() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     var func = prompt("Please enter value within the integral", "Value within the contour integral");
 
     let val = '\\oint(' +func + ')dx';
@@ -448,7 +448,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public doubleIntegral() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let lower = prompt("Please enter lower limit of the inner integral", "Lower limit of inner integral");
     var upper = prompt("Please enter upper limit of the inner integral", "Upper limit of inner integral");
     var func = prompt("Please enter value within the inner integral", "Value within the inner integral");
@@ -467,7 +467,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public partialDifferential() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let numerator = prompt("Please enter differential's numerator", "Differential's numerator");
     var denominator = prompt("Please enter differential's denominator", "Differential's denominator");
 
@@ -485,7 +485,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public firstAccent() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let base = prompt("Please enter function value within the accent", "Function value within the accent");
 
     let val = '\\dot{(' + base + ')}';
@@ -502,7 +502,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public secondAccent() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let base = prompt("Please enter function value within the accent", "Function value within the accent");
 
     let val = '\\ddot{(' + base + ')}';
@@ -519,7 +519,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public thirdAccent() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let base = prompt("Please enter function value within the accent", "Function value within the accent");
 
     let val = '\\dddot{(' + base + ')}';
@@ -536,7 +536,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public radical() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let base = prompt("Please choose type of radical", "Enter numeric value for type of radical");
     let func = prompt("Please type value which will be under the radical", "Value under the radical");
 
@@ -554,7 +554,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
   
   public vector() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let num= prompt("Please enter number of elements for vector", "")!;
 
     let numOfElements = parseInt(num);
@@ -566,13 +566,13 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
         arr.push(a);
       }
 
-      console.log(arr);
+      //console.log(arr);
       let finalStr = '';
       for (let j = 0; j<arr.length; j++ ){
         finalStr = finalStr + arr[j] + '\\\\';
       }
 
-      console.log(finalStr);
+      //console.log(finalStr);
 
       let val = '\\begin{pmatrix}' + finalStr + '\\end{pmatrix}';
       let form = this.state.formula + val;
@@ -589,7 +589,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
 
     
   public matrix() {
-    console.log(this.state.formula);
+    //console.log(this.state.formula);
     let columns= parseInt(prompt("Please choose number of matrix's columns", "")!);
     let rows= parseInt(prompt("Please choose number of matrix's rows", "")!);
 
@@ -613,7 +613,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
 
       }
 
-      console.log(finalStr);
+      //console.log(finalStr);
 
       let val = '\\begin{bmatrix}' + finalStr + '\\end{bmatrix}';
       let form = this.state.formula + val;
@@ -943,7 +943,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
     }
 
     public sqr_sqrt() {
-      console.log(this.state.formula);
+      //console.log(this.state.formula);
       let func = prompt('Please enter the function', "Function");
       let numerator = prompt("Please enter number for sqr", "Sqr");
       var denominator = prompt("Please enter number for sqrt", "Sqrt");
@@ -962,7 +962,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
     }
 
     public sinx() {
-      console.log(this.state.formula);
+      //console.log(this.state.formula);
       let base = prompt("Please enter function value within the sin", "Function value within the sin");
   
       let val = '\\sin{(' + base + ')}';
@@ -979,7 +979,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
     }
 
     public cosx() {
-      console.log(this.state.formula);
+      //console.log(this.state.formula);
       let base = prompt("Please enter function value within the cos", "Function value within the cos");
   
       let val = '\\cos{(' + base + ')}';
@@ -996,7 +996,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
     }
 
     public tgx() {
-      console.log(this.state.formula);
+      //console.log(this.state.formula);
       let base = prompt("Please enter function value within the tan", "Function value within the tan");
   
       let val = '\\tan{(' + base + ')}';
@@ -1017,7 +1017,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
 
   public handleChange(event) {
     this.setState({formula: event.target.value});
-    console.log('promenio se');
+    //console.log('promenio se');
 
     let mathjax = '$$'+ this.state.formula + '$$';
 
@@ -1043,8 +1043,8 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
   }
 
   public chg(evt) {
-    console.log('kliknuo prvi!')
-    console.log(evt.target);
+    //console.log('kliknuo prvi!')
+    //console.log(evt.target);
     var panel = evt.target.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
@@ -1056,15 +1056,15 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
 
   public submitNewElemSpec() {
     if(this.state.name == '' || this.state.desc == '' || this.state.selectedValues.length == 0){
-      console.log('dopuni');
-      console.log(this.state.name);                                         
+      //console.log('dopuni');
+      //console.log(this.state.name);                                         
     }
     else {
-      console.log('prihvatio');
-      console.log('Name:' + this.state.name);
-      console.log('Desc:' + this.state.desc);
+      //console.log('prihvatio');
+      //console.log('Name:' + this.state.name);
+      //console.log('Desc:' + this.state.desc);
       SharePointService.createElemSpec(this.state.name, this.state.desc, this.state.formula, this.state.selectedValues[0].key).then (result => {
-        console.log(result);
+        //console.log(result);
         SharePointService.newListItemId = result.ID;
 
         //alert(`Novokreirani item ID: ${result.ID}`);
@@ -1072,14 +1072,14 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
         
         for(let i =0 ; i< num; i++) {
           SharePointService.uploadPicture(i)!.then(res => {
-            console.log(res);
+            //console.log(res);
           })
         }
 
-        var resu: Promise<string> = PageModelHelper.createCustomPage(SharePointService.newListItemId, this.state.optionSelected);
+        var resu: Promise<string> = PageModelHelper.createCustomPage(this.state.name, SharePointService.newListItemId, this.state.optionSelected);
         resu.then(ss => {
-          console.log(ss);
-          window.location.href = "https://jvspdev.sharepoint.com/sites/AtlasCorpoProject/SitePages/All-element-specs.aspx";
+          //console.log(ss);
+          window.location.href = `${SharePointService.context.pageContext.web.absoluteUrl}/SitePages/All-element-specs.aspx`;
 
         });
         
@@ -1104,7 +1104,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
 
   public onSelectedItem = (data: { key: string; name: string }[]) :void=>{  
     this.setState({selectedValues:data});
-    console.log(data);  
+    //console.log(data);  
 } 
 
 
