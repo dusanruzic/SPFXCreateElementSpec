@@ -239,6 +239,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
             Textual formula:
           </h3>
           
+        {/*
         <input
           type="text"
           style={{width:'100%'}}
@@ -247,6 +248,11 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
           onChange={this.promenaGlavnog}
           //placeholder='Here you put whole formula'
         />
+        */}
+
+        <TextField id='name' multiline value={this.state.formula}
+          placeholder="Enter formula here directly or use left helpbar with predefined elements"
+          onChange={this.promenaGlavnog}/>
 
 
           <h3 style={{textAlign: 'center' }}>
