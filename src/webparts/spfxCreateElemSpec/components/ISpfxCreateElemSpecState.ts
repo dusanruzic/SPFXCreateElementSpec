@@ -8,6 +8,7 @@ export interface ISpfxCreateElemSpecState {
     newPageName: string;
     optionSelected: string;
     selectedValues:any[];
-  
+    is_creating: boolean;
+    has_error: boolean
   }
   
