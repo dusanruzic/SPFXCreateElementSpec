@@ -34,7 +34,7 @@ import styles from './SpfxCreateElemSpec.module.scss';
 
 
 const dialogContentProps = {
-  type: DialogType.normal,
+  type: DialogType.largeHeader,
   title: 'Missing Fields',
   subText: 'Some required field is not filled. Please provide content to all required fields. ',
 };
