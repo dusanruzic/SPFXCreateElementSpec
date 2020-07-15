@@ -35,8 +35,11 @@ export default class SpfxCreateElemSpecWebPart extends BaseClientSideWebPart<ISp
   }
   public onInit(): Promise<void> {
     return super.onInit().then(() =>{
-      let elemSpecListID = '3031e278-aab5-4dc1-aa9b-0d735b49cf29';
-      let ideaListID = 'CF70FB14-EE3E-4D16-921A-3449856770E7';
+      //let elemSpecListID = '3031e278-aab5-4dc1-aa9b-0d735b49cf29';
+      let elemSpecListID = 'Element%20spec';
+
+      //let ideaListID = 'cbcf314d-6d42-48ab-aff9-87c01bba1046';
+      let ideaListID = 'Idea';
       SharePointService.setup(this.context, Environment.type, elemSpecListID, ideaListID);
       sp.setup({
         spfxContext: this.context

@@ -131,7 +131,8 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
       <TextField id='desc' value={this.state.desc} onChange={evt => this.changeDesc(evt)}/>
 
       <Label htmlFor='desc' required>Idea on which is based this element specification</Label>
-      <ListItemPicker listId={SharePointService.ideaListID}  
+      <ListItemPicker listId='cbcf314d-6d42-48ab-aff9-87c01bba1046'
+
                 columnInternalName='Title'  
               keyColumnInternalName='Id'  
                 itemLimit={1}  
