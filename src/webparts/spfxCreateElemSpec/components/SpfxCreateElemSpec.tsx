@@ -47,6 +47,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
     this.handleChange = this.handleChange.bind(this);
     this.promenaGlavnog = this.promenaGlavnog.bind(this);
     this.toggleHideDialog = this.toggleHideDialog.bind(this);
+    this.proveraEnterSpace = this.proveraEnterSpace.bind(this);
 
     this.space = this.space.bind(this);
     this.newline = this.newline.bind(this);
@@ -128,7 +129,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
       <TextField id='name' value={this.state.name} onChange={evt => this.changeName(evt)}/>
 
       <Label htmlFor='desc' required>Element specification description</Label>
-      <TextField id='desc' value={this.state.desc} onChange={evt => this.changeDesc(evt)}/>
+      <TextField id='desc' value={this.state.desc} multiline onChange={evt => this.changeDesc(evt)}/>
 
       <Label htmlFor='desc' required>Idea on which is based this element specification</Label>
       <ListItemPicker listId='cbcf314d-6d42-48ab-aff9-87c01bba1046'
@@ -262,7 +263,7 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
 
         <TextField id='name' multiline value={this.state.formula}
           placeholder="Enter formula here directly or use left helpbar with predefined elements"
-          onChange={this.promenaGlavnog}/>
+          onChange={this.promenaGlavnog} onKeyDown={this.proveraEnterSpace} />
 
 
           <h3 style={{textAlign: 'center' }}>
@@ -1060,11 +1061,35 @@ export default class SpfxCreateElemSpec extends React.Component<ISpfxCreateElemS
       formula: form,
       formulaMathjax: formMathjax
     });
+    
+  }
 
+  public proveraEnterSpace(event) {
+    //console.log('lele');
+    //console.log(event);
+    if(event.keyCode === 13){
+      //pritisnut enter
+      let form = event.target.value;
+      let val = '\\\\';
+      let formval = form + val;
+      let formMathjax = '$$' + formval + '$$';
 
-    
-    
-    
+      this.setState({
+        formula: formval,
+        formulaMathjax: formMathjax
+      });
+    }
+    else if(event.keyCode === 32){
+      let form = event.target.value;
+      let val = '\\ ';
+      let formval = form + val;
+      let formMathjax = '$$' + formval + '$$';
+
+      this.setState({
+        formula: formval,
+        formulaMathjax: formMathjax
+      });
+    }
   }
 
   public chg(evt) {
